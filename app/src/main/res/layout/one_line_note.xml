@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    android:background="@drawable/rounded_corner"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:layout_marginBottom="10dp"
+    android:id="@+id/one_line_note_relative_layout_ONELINENOTEFILE"
+    >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/title_output_ONELINENOTEFILE"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        android:text="@string/title_output_ONELINENOTE">
+    </TextView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/description_output_ONELINENOTEFILE"
+        android:layout_below="@+id/title_output_ONELINENOTEFILE"
+        android:textColor="#393939"
+        android:text="@string/description_output_ONELINENOTEFILE">
+    </TextView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/date_output_ONELINENOTEFILE"
+        android:textSize="12dp"
+        android:layout_below="@+id/description_output_ONELINENOTEFILE"
+        android:textColor="@color/black"
+        android:gravity="end"
+        android:text="@string/date_output_ONELINENOTEFILE">
+    </TextView>
+
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/time_output_ONELINENOTEFILE"
+        android:textSize="12dp"
+        android:layout_below="@+id/date_output_ONELINENOTEFILE"
+        android:textColor="@color/black"
+        android:gravity="end"
+        android:text="@string/time_output_ONELINENOTEFILE">
+    </TextView>
+
+
+</RelativeLayout>

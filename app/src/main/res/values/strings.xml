@@ -1,3 +1,44 @@
 <resources>
     <string name="app_name">Organizer</string>
+
+    <!-- My Menu File -->
+    <string name="nav_add_new_note_MYMENUFILE">Додати запис</string>
+    <string name="nav_search_MYMENUFILE">Пошук</string>
+    <!--    -->
+
+    <!-- Main Activity -->
+    <string name="notes_is_empty_text_MAINACTIVTIY">Ви не додали жодного запису</string>
+    <!--    -->
+
+    <!-- Add New Note Activity -->
+    <string name="title_input_ADDNEWNOTEACTIVITY">Назва</string>
+    <string name="description_input_ADDNEWNOTEACTIVITY">Опис</string>
+    <string name="add_new_note_text_ADDNEWNOTEACTIVITY">Додати нову замітку</string>
+    <string name="add_new_note_button_ADDNEWNOTEACTIVITY">Зберегти запис</string>
+    <!--    -->
+
+    <!-- One Line Note File -->
+    <string name="title_output_ONELINENOTE">Заголовок</string>
+    <string name="description_output_ONELINENOTEFILE">Опис</string>
+    <string name="time_output_ONELINENOTEFILE">99:99:99</string>
+    <string name="date_output_ONELINENOTEFILE">03.05.2023</string>
+    <!--    -->
+
+
+    <!-- Note Change Activity -->
+    <string name="update_note_button_NOTEDETAILSACTIVITY">Оновити інформацію</string>
+    <string name="delete_note_button_NOTEDETAILSACTIVITY">Видалити запис</string>
+    <!--    -->
+
+    <!-- Search Activity -->
+    <string name="search_by_title_input_SEARCHACTIVITY">Пошук за назвою</string>
+    <string name="search_by_time_input_SEARCHACTIVITY">Пошук за часом створення</string>
+    <string name="search_by_data_input_SEARCHACTIVITY">Пошук за датою створення</string>
+    <string name="search_by_title_button_SEARCHACTIVITY">Виконати пошук за назвою</string>
+    <string name="search_by_time_button_SEARCHACTIVITY">Виконати пошук за часом</string>
+    <string name="search_by_date_button_SEARCHACTIVITY">Виконати пошук за датою</string>
+    <string name="sort_A_Z_button_SEARCHACTIVITY">Сортування за алфавітом A-Z</string>
+    <string name="sort_Z_A_button_SEARCHACTIVITY">Сортування за алфавітом Z-A</string>
+    <string name="sort_by_time_and_date_creation_button_SEARCHACTIVITY">Сортування за часом і датою створення</string>
+    <!--    -->
 </resources>
