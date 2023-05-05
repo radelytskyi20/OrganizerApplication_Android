@@ -4,21 +4,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg_main_color"
-    tools:context=".MainActivity">
-
+    tools:context=".SearchResultActivity"
+    android:background="@color/bg_main_color">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/recycler_view_MAINACTIVITY"
+        android:id="@+id/recycler_view_SEARCHRESULTACTIVITY"
+        android:layout_width="409dp"
+        android:layout_height="729dp"
+        android:layout_marginStart="1dp"
         android:layout_marginTop="10dp"
-        >
-    </androidx.recyclerview.widget.RecyclerView>
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <ImageView
-        android:id="@+id/empty_imageview_MAINACTIVITY"
+        android:id="@+id/no_result_search_imageview_SEARCHRESULTACTIVITY"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="270dp"
@@ -27,21 +31,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_empty" />
+        app:srcCompat="@drawable/ic_empty_search" />
 
 
     <TextView
-        android:id="@+id/notes_is_empty_text_MAINACTIVTIY"
+        android:id="@+id/no_result_search_SEARCHRESULTACTIVITY"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="@string/notes_is_empty_text_MAINACTIVTIY"
+        android:text="@string/no_result_search_SEARCHRESULTACTIVITY"
         android:textSize="20sp"
         android:textColor="@color/black"
         android:alpha="0.4"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/empty_imageview_MAINACTIVITY" />
-
+        app:layout_constraintTop_toBottomOf="@+id/no_result_search_imageview_SEARCHRESULTACTIVITY" />
 </androidx.constraintlayout.widget.ConstraintLayout>

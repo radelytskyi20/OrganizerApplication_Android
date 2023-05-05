@@ -41,4 +41,6 @@
     <string name="sort_Z_A_button_SEARCHACTIVITY">Сортування за алфавітом Z-A</string>
     <string name="sort_by_time_and_date_creation_button_SEARCHACTIVITY">Сортування за часом і датою створення</string>
     <!--    -->
+
+    <string name="no_result_search_SEARCHRESULTACTIVITY">Результатів пошуку не знайдено</string>
 </resources>

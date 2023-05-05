@@ -8,7 +8,10 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import com.example.organizer.Model.Note;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class DBHelper extends SQLiteOpenHelper {
@@ -16,7 +19,6 @@ public class DBHelper extends SQLiteOpenHelper {
     private Context context;
     public static final String DATABASE_NAME = "OrganizerDB.db";
     public static final int DATABASE_VERSION = 1;
-
     public static final String TABLE_NOTES = "notes";
     public static final String COLUMN_ID = "id";
     public static final String COLUMN_TITLE = "title";
@@ -190,5 +192,88 @@ public class DBHelper extends SQLiteOpenHelper {
         return notesList;
     }
 
+    public List<Note> searchNotesByTitle(String searchText) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        List<Note> notesList = new ArrayList<>();
+        String query = "SELECT * FROM " + TABLE_NOTES + " WHERE " + COLUMN_TITLE + " LIKE '%" + searchText + "%'";
+
+        Cursor cursor = db.rawQuery(query, null);
+
+        while (cursor.moveToNext()) {
+            Note note = new Note();
+            note.setId(cursor.getInt(0));
+            note.setTitle(cursor.getString(1));
+            note.setDescription(cursor.getString(2));
+            note.setTime(cursor.getString(3));
+            note.setDate(cursor.getString(4));
+            notesList.add(note);
+        }
+
+        cursor.close();
+        db.close();
+
+        return notesList;
+    }
+    public List<Note> searchNotesByTime(String time) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        List<Note> notes = new ArrayList<>();
+
+        SimpleDateFormat format = new SimpleDateFormat("HH:mm:ss");
+        Date searchTime = null;
+        try {
+            searchTime = format.parse(time);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        long searchTimeMillis = searchTime.getTime();
+
+        String selectQuery = "SELECT * FROM " + TABLE_NOTES;
+        Cursor cursor = db.rawQuery(selectQuery, null);
+        if (cursor.moveToFirst()) {
+            do {
+                Note note = new Note();
+                note.setId(cursor.getInt(0));
+                note.setTitle(cursor.getString(1));
+                note.setDescription(cursor.getString(2));
+
+                String createdTimeStr = cursor.getString(3);
+                Date createdTime = null;
+                try {
+                    createdTime = format.parse(createdTimeStr);
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+                long createdTimeMillis = createdTime.getTime();
+
+                if (Math.abs(searchTimeMillis - createdTimeMillis) <= 1800000) {
+                    note.setTime(createdTimeStr);
+                    note.setDate(cursor.getString(4));
+                    notes.add(note);
+                }
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+        return notes;
+    }
+
+        public List<Note> searchNotesByDate(String date) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        List<Note> notes = new ArrayList<>();
+        String selectQuery = "SELECT * FROM " + TABLE_NOTES + " WHERE " + COLUMN_DATE + "=?";
+        Cursor cursor = db.rawQuery(selectQuery, new String[] { date });
+        if (cursor.moveToFirst()) {
+            do {
+                Note note = new Note();
+                note.setId(cursor.getInt(0));
+                note.setTitle(cursor.getString(1));
+                note.setDescription(cursor.getString(2));
+                note.setTime(cursor.getString(3));
+                note.setDate(cursor.getString(4));
+                notes.add(note);
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+        return notes;
+    }
 }
 

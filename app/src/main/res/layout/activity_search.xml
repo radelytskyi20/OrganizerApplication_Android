@@ -58,7 +58,7 @@
         android:layout_marginTop="15dp"
         android:hint="@string/search_by_data_input_SEARCHACTIVITY"
         android:background="@drawable/rounded_corner"
-        android:inputType="time"
+        android:inputType="date"
         android:padding="18dp"
         android:textStyle="bold"
         android:gravity="top"
